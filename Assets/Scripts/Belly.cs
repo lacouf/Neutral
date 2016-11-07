@@ -5,6 +5,7 @@ using System.Collections;
 public class Belly : MonoBehaviour {
 
 	private LineRenderer lineRenderer;
+	Renderer renderer;
 
 	GameObject leftShoulder;
 	GameObject rightShoulder;
@@ -28,12 +29,11 @@ public class Belly : MonoBehaviour {
 		belly = GameObject.Find("Belly");
 
 		//calcAngles ();
-		createBellyLines ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		createBellyLines ();
 	}
 
 	void calcAngles() {

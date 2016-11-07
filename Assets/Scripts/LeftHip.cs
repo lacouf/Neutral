@@ -22,12 +22,11 @@ public class LeftHip : MonoBehaviour {
 		rightKnee = GameObject.Find("RightKnee");
 		rightFoot = GameObject.Find("RightFoot");
 
-		createHipLineRenderer ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		createHipLineRenderer ();
 	}
 
 	void createHipLineRenderer() {

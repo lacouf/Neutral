@@ -39,6 +39,7 @@ public class LeftShoulder : MonoBehaviour {
 		int i = 0;
 
 		lineRenderer.enabled = true;
+		lineRenderer.SetWidth (0.5f, 0.5f);
 
 		lineRenderer.SetPosition (i++, rightHand.transform.position);
 		lineRenderer.SetPosition (i++, rightElbow.transform.position);

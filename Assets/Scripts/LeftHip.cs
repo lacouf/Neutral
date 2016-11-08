@@ -37,6 +37,9 @@ public class LeftHip : MonoBehaviour {
 		int i = 0;
 
 		lineRenderer.enabled = true;
+		//lineRenderer.material = new Material (Shader.Find ("Particles/Additive"));
+		//lineRenderer.SetColors (Color.cyan, Color.cyan);
+		lineRenderer.SetWidth (0.5f, 0.5f);
 
 		lineRenderer.SetPosition (i++, rightFoot.transform.position);
 		lineRenderer.SetPosition (i++, rightKnee.transform.position);

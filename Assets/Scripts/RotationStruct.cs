@@ -15,7 +15,7 @@ public class RotationStruct : MonoBehaviour {
 
 	public static void Add(RotationObject rotationObject) {
 		rotationObjects.Add (rotationObject);
-		print ("Rotation Objects count: " + rotationObjects.Count);
+		//print ("Rotation Objects count: " + rotationObjects.Count);
 	}
 
 	public static IEnumerable <RotationObject> RotationObjectsValues() {
@@ -28,7 +28,7 @@ public class RotationStruct : MonoBehaviour {
 		if (currentObject > rotationObjects.Count-1) {
 			currentObject = 0;
 		}
-		print ("currentObject: " + currentObject);
+		//print ("currentObject: " + rotationObjects [currentObject].name + " " + currentObject);
 		return rotationObjects [currentObject];
 	}
 
@@ -38,7 +38,7 @@ public class RotationStruct : MonoBehaviour {
 		if (currentObject < 0) {
 			currentObject = rotationObjects.Count-1;
 		}
-		print ("currentObject: " + currentObject);
+		//print ("currentObject: " + rotationObjects [currentObject].name + " " + currentObject);
 		return rotationObjects [currentObject];
 	}
 

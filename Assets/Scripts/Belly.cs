@@ -5,7 +5,6 @@ using System.Collections;
 public class Belly : MonoBehaviour {
 
 	private LineRenderer lineRenderer;
-	Renderer renderer;
 
 	GameObject leftShoulder;
 	GameObject rightShoulder;
@@ -59,6 +58,7 @@ public class Belly : MonoBehaviour {
 		int i = 0;
 
 		lineRenderer.enabled = true;
+		lineRenderer.SetWidth (0.5f, 0.5f);
 
 		lineRenderer.SetPosition (i++, head.transform.position);
 		lineRenderer.SetPosition (i++, Vector3.Lerp(leftShoulder.transform.position, rightShoulder.transform.position, 0.5F));

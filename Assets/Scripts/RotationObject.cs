@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 public class RotationObject  {
 
+	public string name;
 	public Vector3 rotationFrom;
-	public Vector3 rotationAxisX;
+	public Vector3 rotationAxis;
 	public List<GameObject> dependantObjects = new List<GameObject>();
 
 	public RotationObject() {

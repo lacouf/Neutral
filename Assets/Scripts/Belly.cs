@@ -6,6 +6,7 @@ public class Belly : MonoBehaviour {
 
 	private LineRenderer lineRenderer;
 
+	GameObject betweenShoulders;
 	GameObject leftShoulder;
 	GameObject rightShoulder;
 	GameObject rightHip;
@@ -19,6 +20,7 @@ public class Belly : MonoBehaviour {
 			lineRenderer = GetComponent<LineRenderer>();
 		}
 		//Get references to other objects
+		betweenShoulders = GameObject.Find("BetweenShoulders");
 		leftShoulder = GameObject.Find("LeftShoulder");
 		rightShoulder = GameObject.Find("RightShoulder");
 		rightHip = GameObject.Find("RightHip");
@@ -35,21 +37,6 @@ public class Belly : MonoBehaviour {
 		createBellyLines ();
 	}
 
-	void calcAngles() {
-		Vector3 targetDir = leftShoulder.transform.position - rightShoulder.transform.position;
-
-		float angle1 = Vector3.Angle( targetDir, transform.right );
-		float angle2 = Vector3.Angle( targetDir, transform.up );
-		float angle3 = Vector3.Angle( targetDir, transform.forward );
-		print ("leftShoulder to rightShoulder : (r, u, f) : (" + angle1 + ", " + angle2 + ", " + angle3 + ")");	
-
-		targetDir = rightShoulder.transform.position - leftShoulder.transform.position;
-		angle1 = Vector3.Angle( targetDir, transform.right );
-		angle2 = Vector3.Angle( targetDir, transform.up );
-		angle3 = Vector3.Angle( targetDir, transform.forward );
-		//print ("rightShoulder to leftShoulder : (r, u, f) : (" + angle1 + ", " + angle2 + ", " + angle3 + ")");	
-	}
-
 	void createBellyLines() {
 
 		CreateLineRenderers ();
@@ -61,9 +48,11 @@ public class Belly : MonoBehaviour {
 		lineRenderer.SetWidth (0.5f, 0.5f);
 
 		lineRenderer.SetPosition (i++, head.transform.position);
-		lineRenderer.SetPosition (i++, Vector3.Lerp(leftShoulder.transform.position, rightShoulder.transform.position, 0.5F));
+		lineRenderer.SetPosition (i++, betweenShoulders.transform.position);
+		//lineRenderer.SetPosition (i++, Vector3.Lerp(leftShoulder.transform.position, rightShoulder.transform.position, 0.5F));
 
-		lineRenderer.SetPosition (i++, Vector3.Lerp(leftShoulder.transform.position, rightShoulder.transform.position, 0.5F));
+		//lineRenderer.SetPosition (i++, Vector3.Lerp(leftShoulder.transform.position, rightShoulder.transform.position, 0.5F));
+		lineRenderer.SetPosition (i++, betweenShoulders.transform.position);
 		lineRenderer.SetPosition (i++, belly.transform.position);
 
 		lineRenderer.SetPosition (i++, belly.transform.position); 

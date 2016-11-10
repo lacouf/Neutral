@@ -4,6 +4,7 @@ using System.Collections;
 public class CameraRotation : MonoBehaviour {
 
 	GameObject belly;
+	int speed = 2;
 
 	// Use this for initialization
 	void Start () {
@@ -14,17 +15,17 @@ public class CameraRotation : MonoBehaviour {
 	void Update () {
 		
 		if (Input.GetKeyDown(KeyCode.UpArrow)) {
-			transform.position += Vector3.back;
+			transform.position += Vector3.back * speed;
 		} else if (Input.GetKeyDown(KeyCode.DownArrow)) {
-			transform.position += Vector3.forward;
+			transform.position += Vector3.forward * speed;
 		} else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
-			transform.position += Vector3.right;
+			transform.position += Vector3.right * speed;
 		} else if (Input.GetKeyDown(KeyCode.RightArrow)) {
-			transform.position += Vector3.left;
+			transform.position += Vector3.left * speed;
 		} else if (Input.GetKeyDown(KeyCode.A)) {
-			transform.position += Vector3.up;
+			transform.position += Vector3.up * speed;
 		} else if (Input.GetKeyDown(KeyCode.Z)) {
-			transform.position += Vector3.down;
+			transform.position += Vector3.down * speed;
 		} 
 			
 		float rotationSpeed = 1.0f;
@@ -35,19 +36,21 @@ public class CameraRotation : MonoBehaviour {
 		if (mouseZplus < 0F) {
 			mouseZplus = mouseZplus + 1;
 		}
+
 		if (mouseZminus < 0F) {
 			mouseZminus = mouseZminus + 1;
 		}
-		//print ("Right Stick (x,y): " + mouseX + ", " + mouseY);
-		//transform.localRotation = Quaternion.Euler (0, mouseX, 0) * transform.localRotation;
-		transform.Translate(Vector3.right * mouseX);
-		transform.Translate(Vector3.up * mouseY);
+
+		transformWithLookAt (mouseX, mouseY, mouseZplus, mouseZminus);
+
+	}
+
+	void transformWithLookAt (float mouseX, float mouseY, float mouseZplus, float mouseZminus) {
+		transform.LookAt (belly.transform.position);
+		transform.Translate (Vector3.right * mouseX);
+		transform.Translate (Vector3.up * mouseY);
 		transform.Translate (Vector3.forward * mouseZplus);
 		transform.Translate (Vector3.forward * -mouseZminus);
 		transform.LookAt (belly.transform.position);
-
-		//Camera camera = GetComponentInChildren<Camera> ();
-		//camera.transform.localRotation = Quaternion.Euler (mouseY, 0, 0) * camera.transform.localRotation;
-		//camera.transform.LookAt (belly.transform.position);
 	}
 }

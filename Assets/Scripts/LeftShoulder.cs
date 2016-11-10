@@ -5,6 +5,7 @@ public class LeftShoulder : MonoBehaviour {
 
 	LineRenderer lineRenderer;
 
+	GameObject betweenShoulders;
 	GameObject leftShoulder;
 	GameObject leftElbow;
 	GameObject leftHand;
@@ -15,6 +16,7 @@ public class LeftShoulder : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Get references to other objects
+		betweenShoulders = GameObject.Find("BetweenShoulders");
 		leftShoulder = GameObject.Find("LeftShoulder");
 		leftElbow = GameObject.Find("LeftElbow");
 		leftHand = GameObject.Find("LeftHand");
@@ -27,14 +29,14 @@ public class LeftShoulder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		createShoulderLineRenderer ();
 	}
 
 	void createShoulderLineRenderer() {
 
 		CreateLineRenderers ();
 		//lineRenderer = GetComponent<LineRenderer> ();
-		lineRenderer.SetVertexCount (10);
+		lineRenderer.SetVertexCount (12);
 
 		int i = 0;
 
@@ -47,8 +49,13 @@ public class LeftShoulder : MonoBehaviour {
 		lineRenderer.SetPosition (i++, rightElbow.transform.position);
 		lineRenderer.SetPosition (i++, rightShoulder.transform.position);
 
+		//Vector3 betweenShouldersPos = Vector3.Lerp(leftShoulder.transform.position, rightShoulder.transform.position, 0.5F);
+
 		lineRenderer.SetPosition (i++, rightShoulder.transform.position); 
-		lineRenderer.SetPosition (i++, leftShoulder.transform.position);
+		lineRenderer.SetPosition (i++, betweenShoulders.transform.position);
+
+		lineRenderer.SetPosition (i++, betweenShoulders.transform.position);
+		lineRenderer.SetPosition (i++, leftShoulder.transform.position); 
 
 		lineRenderer.SetPosition (i++, leftShoulder.transform.position); 
 		lineRenderer.SetPosition (i++, leftElbow.transform.position);

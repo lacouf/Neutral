@@ -20,7 +20,7 @@ public class TestCube : MonoBehaviour {
 
 		transform.RotateAround (cube1.transform.position, Vector3.right, rotationSpeed * Time.deltaTime);
 		DrawAxis (cube1.transform.position);
-		print ("transform position: " + cube1.transform.position);
+		//print ("transform position: " + cube1.transform.position);
 	
 	}
 

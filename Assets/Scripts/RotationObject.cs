@@ -6,6 +6,7 @@ public class RotationObject  {
 
 	public string name;
 	public Vector3 rotationFrom;
+	public Vector3 rotationPoint2;
 	public Vector3 rotationAxis;
 	public List<GameObject> dependantObjects = new List<GameObject>();
 

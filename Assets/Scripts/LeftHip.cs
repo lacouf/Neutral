@@ -32,7 +32,7 @@ public class LeftHip : MonoBehaviour {
 	void createHipLineRenderer() {
 		CreateLineRenderers ();
 		//lineRenderer = GetComponent<LineRenderer> ();
-		lineRenderer.SetVertexCount (10);
+		lineRenderer.SetVertexCount (12);
 
 		int i = 0;
 
@@ -47,8 +47,12 @@ public class LeftHip : MonoBehaviour {
 		lineRenderer.SetPosition (i++, rightKnee.transform.position);
 		lineRenderer.SetPosition (i++, rightHip.transform.position);
 
+		Vector3 betweenShouldersPos = Vector3.Lerp(leftHip.transform.position, rightHip.transform.position, 0.5F);
 		lineRenderer.SetPosition (i++, rightHip.transform.position); 
-		lineRenderer.SetPosition (i++, leftHip.transform.position);
+		lineRenderer.SetPosition (i++, betweenShouldersPos);
+
+		lineRenderer.SetPosition (i++, betweenShouldersPos);
+		lineRenderer.SetPosition (i++, leftHip.transform.position); 
 
 		lineRenderer.SetPosition (i++, leftHip.transform.position); 
 		lineRenderer.SetPosition (i++, leftKnee.transform.position);

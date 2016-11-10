@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 public static class Constants {
 
 	public const string BELLY = "Belly";
@@ -21,5 +20,4 @@ public static class Constants {
 	public const string RIGHTFOOT = "RightFoot";
 
 }
-
 

@@ -94,7 +94,7 @@ public class GameControl : MonoBehaviour {
 		RotationStruct.Add (CreateRotationObject("Right Elbows around shoulders Y axis", rightShoulder, rightElbow, Vector3.up, rightElbow, rightHand));
 		RotationStruct.Add (CreateRotationObject("Hips around spine", betweenHips, leftHip, Vector3.forward, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
 		RotationStruct.Add (CreateRotationObject("Hips around Y axis", betweenHips, leftHip, Vector3.up, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
-		RotationStruct.Add (CreateRotationObject("Hips and legs around belly", belly, betweenHips, Vector3.right, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+		RotationStruct.Add (CreateRotationObject("Hips and legs around belly", belly, betweenHips, Vector3.right, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
 	}
 
 	void Update() {
@@ -225,9 +225,9 @@ public class GameControl : MonoBehaviour {
 		lineRenderer.material = new Material (Shader.Find ("Particles/Additive"));
 		lineRenderer.SetColors (Color.green, Color.green);
 		lineRenderer.SetWidth (0.2f, 0.2f);
-		lineRenderer.useWorldSpace = true;
-		Vector3 point1 = rot.goToRotateAround.transform.position + rot.rotationAxis * 3;
-		Vector3 point2 = rot.goToRotateAround.transform.position + rot.rotationAxis * -3;
+		lineRenderer.useWorldSpace = false;
+		Vector3 point1 = rot.goToRotateAround.transform.position + (rot.goToRotateAround.transform.rotation * rot.rotationAxis * 3);
+		Vector3 point2 = rot.goToRotateAround.transform.position + (rot.goToRotateAround.transform.rotation *rot.rotationAxis * -3);
 		int i = 0;
 		lineRenderer.SetPosition (i++, point1);
 		lineRenderer.SetPosition (i++, point2);
@@ -266,8 +266,8 @@ public class GameControl : MonoBehaviour {
 			if (go != null) {
 				Vector3 rotationFrom = go.transform.position;
 				Quaternion actualRotation = go.transform.rotation;
-				print ("Game Object: " + go.name + " AroundObject : " + ro.goToRotateAround.name + " go pos " + go.transform.position + " axis " + ro.rotationAxis );
-				go.transform.RotateAround (ro.goToRotateAround.transform.position, ro.rotationAxis, (1f * direction));
+				//print ("Game Object: " + go.name + " AroundObject : " + ro.goToRotateAround.name + " go pos " + go.transform.position + " axis " + ro.rotationAxis );
+				go.transform.RotateAround (ro.goToRotateAround.transform.position, ro.goToRotateAround.transform.rotation * ro.rotationAxis, (1f * direction));
 			}
 		}
 	}

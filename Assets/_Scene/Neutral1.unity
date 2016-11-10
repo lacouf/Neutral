@@ -193,6 +193,11 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4294967295
   m_UseWorldSpace: 1
+--- !u!4 &125440213 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000013400158426, guid: 1346940362d444be0a23672deaec0ebc,
+    type: 2}
+  m_PrefabInternal: {fileID: 125440206}
 --- !u!1001 &134360880
 Prefab:
   m_ObjectHideFlags: 0
@@ -536,7 +541,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012006055228, guid: 1346940362d444be0a23672deaec0ebc, type: 2}
       propertyPath: m_Name
-      value: BetweenShoulders
+      value: Head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1346940362d444be0a23672deaec0ebc, type: 2}
@@ -732,9 +737,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 908651606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ee90395e5cc4042be0c9142c67dfbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 27517a0d44aef480986ac87205c1d76d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 125440213}
+  targetOffset: {x: 0, y: 0, z: 0}
+  distance: 5
+  maxDistance: 30
+  minDistance: 0.6
+  xSpeed: 200
+  ySpeed: 200
+  yMinLimit: -80
+  yMaxLimit: 80
+  zoomRate: 40
+  panSpeed: 0.3
+  zoomDampening: 5
 --- !u!1001 &947825127
 Prefab:
   m_ObjectHideFlags: 0
@@ -822,7 +839,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012006055228, guid: 1346940362d444be0a23672deaec0ebc, type: 2}
       propertyPath: m_Name
-      value: Head
+      value: BetweenShoulders
       objectReference: {fileID: 0}
     - target: {fileID: 4000013400158426, guid: 1346940362d444be0a23672deaec0ebc, type: 2}
       propertyPath: m_LocalScale.x

@@ -92,9 +92,9 @@ public class GameControl : MonoBehaviour {
 		RotationStruct.Add (CreateRotationObject ("Right Elbows around shoulders X axis", rightShoulder, rightElbow, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, rightElbow, rightHand));
 		RotationStruct.Add (CreateRotationObject ("Left Elbows around shoulders Y axis", leftShoulder, leftElbow, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, leftElbow, leftHand));
 		RotationStruct.Add (CreateRotationObject ("Right Elbows around shoulders Y axis", rightShoulder, rightElbow, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject ("Hips around spine", betweenHips, leftHip, Vector3.forward, Vector3.forward, Vector3.forward, Vector3.right, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
-		RotationStruct.Add (CreateRotationObject ("Hips around Y axis", betweenHips, leftHip, Vector3.up, Vector3.up, Vector3.right, Vector3.forward, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
-		RotationStruct.Add (CreateRotationObject ("Hips and legs around belly", belly, betweenHips, false, Vector3.right, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+		RotationStruct.Add (CreateRotationObject ("Hips around X axis", betweenHips, leftHip, Vector3.forward, Vector3.forward, Vector3.right, Vector3.up, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+		RotationStruct.Add (CreateRotationObject ("Hips around Y axis", betweenHips, leftHip, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+		RotationStruct.Add (CreateRotationObject ("Hips and legs around belly", belly, betweenHips, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
 	}
 
 	void Update () {

@@ -41,7 +41,7 @@ public class GameControl : MonoBehaviour {
 
 	private LineRenderer lineRenderer;
 
-	void Awake() {
+	void Awake () {
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
 		} else if (control != this) {
@@ -51,7 +51,7 @@ public class GameControl : MonoBehaviour {
 		FindGameObjects ();
 
 		if (displayCanvas == null) {
-			displayCanvas = (DisplayCanvas) FindObjectOfType(typeof(DisplayCanvas));
+			displayCanvas = (DisplayCanvas)FindObjectOfType (typeof(DisplayCanvas));
 			//print ("Display Canvas " + displayCanvas);
 			if (displayCanvas != null) {
 				
@@ -61,16 +61,16 @@ public class GameControl : MonoBehaviour {
 						RectTransform panel = child.gameObject.GetComponent<RectTransform> ();
 						foreach (Transform child2 in panel.transform) {
 							//print ("Child2 " + child2.gameObject.name);
-							if (child2.name.Equals("RotationObjectText")) {
+							if (child2.name.Equals ("RotationObjectText")) {
 								rotationObjectName = child2.gameObject.GetComponent<UnityEngine.UI.Text> ();
 								rotationObjectName.text = "Rotation Object";
-							} else if (child2.name.Equals("AngleX")) {
+							} else if (child2.name.Equals ("AngleX")) {
 								angleX = child2.gameObject.GetComponent<UnityEngine.UI.Text> ();
 								angleX.text = "AngleX";
-							} else if (child2.name.Equals("AngleY")) {
+							} else if (child2.name.Equals ("AngleY")) {
 								angleY = child2.gameObject.GetComponent<UnityEngine.UI.Text> ();
 								angleY.text = "AngleY";
-							} else if (child2.name.Equals("AngleZ")) {
+							} else if (child2.name.Equals ("AngleZ")) {
 								angleZ = child2.gameObject.GetComponent<UnityEngine.UI.Text> ();
 								angleZ.text = "AngleZ";
 							}
@@ -83,36 +83,36 @@ public class GameControl : MonoBehaviour {
 				}
 			}
 		}
-
-		RotationStruct.Add (CreateRotationObject("Head & Shoulders around belly", belly, betweenShoulders, Vector3.right, head, betweenShoulders,leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject("Left shoulder around spine", betweenShoulders, leftShoulder, Vector3.forward, leftShoulder, leftElbow, leftHand));
-		RotationStruct.Add (CreateRotationObject("right shoulder around spine", betweenShoulders, rightShoulder, Vector3.forward, rightShoulder, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject("Shoulders around Y axis", betweenShoulders, leftShoulder, Vector3.up, head, leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject("Left Elbows around shoulders X axis", leftShoulder, leftElbow, Vector3.right, leftElbow, leftHand));
-		RotationStruct.Add (CreateRotationObject("Right Elbows around shoulders X axis", rightShoulder, rightElbow, Vector3.right, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject("Left Elbows around shoulders Y axis", leftShoulder, leftElbow, Vector3.up, leftElbow, leftHand));
-		RotationStruct.Add (CreateRotationObject("Right Elbows around shoulders Y axis", rightShoulder, rightElbow, Vector3.up, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject("Hips around spine", betweenHips, leftHip, Vector3.forward, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
-		RotationStruct.Add (CreateRotationObject("Hips around Y axis", betweenHips, leftHip, Vector3.up, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
-		RotationStruct.Add (CreateRotationObject("Hips and legs around belly", belly, betweenHips, Vector3.right, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+			
+		RotationStruct.Add (CreateRotationObject ("Head & Shoulders around belly", belly, betweenShoulders, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, head, betweenShoulders, leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Left shoulder around spine", betweenShoulders, leftShoulder, Vector3.forward, Vector3.forward, Vector3.right, Vector3.up, leftShoulder, leftElbow, leftHand));
+		RotationStruct.Add (CreateRotationObject ("right shoulder around spine", betweenShoulders, rightShoulder, Vector3.forward, Vector3.forward, Vector3.right, Vector3.up, rightShoulder, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Shoulders around Y axis", betweenShoulders, head, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, head, leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Left Elbows around shoulders X axis", leftShoulder, leftElbow, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, leftElbow, leftHand));
+		RotationStruct.Add (CreateRotationObject ("Right Elbows around shoulders X axis", rightShoulder, rightElbow, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Left Elbows around shoulders Y axis", leftShoulder, leftElbow, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, leftElbow, leftHand));
+		RotationStruct.Add (CreateRotationObject ("Right Elbows around shoulders Y axis", rightShoulder, rightElbow, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Hips around spine", betweenHips, leftHip, Vector3.forward, Vector3.forward, Vector3.forward, Vector3.right, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+		RotationStruct.Add (CreateRotationObject ("Hips around Y axis", betweenHips, leftHip, Vector3.up, Vector3.up, Vector3.right, Vector3.forward, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+		RotationStruct.Add (CreateRotationObject ("Hips and legs around belly", belly, betweenHips, false, Vector3.right, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
 	}
 
-	void Update() {
+	void Update () {
 		bool needRedraw = false;
 		
-		if (Input.GetButton ("XBoxBt7") || Input.GetKeyDown(KeyCode.Q)) {
+		if (Input.GetButton ("XBoxBt7") || Input.GetKeyDown (KeyCode.Q)) {
 			rotationObject = RotationStruct.Next ();
 			needRedraw = true;
-		} else	if (Input.GetButton("XBoxBt8") || Input.GetKeyDown(KeyCode.W)) {
+		} else if (Input.GetButton ("XBoxBt8") || Input.GetKeyDown (KeyCode.W)) {
 			rotationObject = RotationStruct.Previous ();
 			needRedraw = true;
 		}
 
 
-		if (Input.GetKeyDown (KeyCode.Equals)) {
+		if (Input.GetKey (KeyCode.Equals)) {
 			RotateObject (rotationObject, 1);
 			needRedraw = true;
-		} else if (Input.GetKeyDown (KeyCode.Minus)) {
+		} else if (Input.GetKey (KeyCode.Minus)) {
 			RotateObject (rotationObject, -1);
 			needRedraw = true;
 		}
@@ -125,7 +125,7 @@ public class GameControl : MonoBehaviour {
 		}
 	}
 
-	void FindGameObjects() {
+	void FindGameObjects () {
 		belly = GameObject.Find (Constants.BELLY);
 		head = GameObject.Find (Constants.HEAD);
 		betweenShoulders = GameObject.Find (Constants.BETWEENSHOULDERS);
@@ -177,7 +177,7 @@ public class GameControl : MonoBehaviour {
 			print ("rightFoot null");
 	}
 
-	public void Save() {
+	public void Save () {
 		BinaryFormatter bf = new BinaryFormatter ();
 		//print ("Path: " + Application.persistentDataPath);
 		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
@@ -185,24 +185,25 @@ public class GameControl : MonoBehaviour {
 		data.someData = 1;
 		data.someOtherData = 2;
 		bf.Serialize (file, data);
-		file.Close();
+		file.Close ();
 	}
 
-	public void Load() {
-		if (File.Exists(Application.persistentDataPath + "playerInfo.dat")) {
+	public void Load () {
+		if (File.Exists (Application.persistentDataPath + "playerInfo.dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
-			playerData = (PlayerData) bf.Deserialize(file);
+			playerData = (PlayerData)bf.Deserialize (file);
 			file.Close ();
 		}
 
 	}
 
-	RotationObject CreateRotationObject(string name, GameObject goToRotateAround, GameObject pointForAngleCalc, Vector3 axis, params GameObject[] values) {
+	RotationObject CreateRotationObject (string name, GameObject goToRotateAround, GameObject pointForAngleCalc, bool inverse, Vector3 axis, params GameObject[] values) {
 		RotationObject rotObject = new RotationObject ();
 		rotObject.name = name;
 		rotObject.goToRotateAround = goToRotateAround;
 		rotObject.pointForAngleCalc = pointForAngleCalc;
+		rotObject.sub90 = inverse;
 		rotObject.rotationAxis = axis;
 		foreach (GameObject go in values) {
 			if (go == null) {
@@ -213,13 +214,31 @@ public class GameControl : MonoBehaviour {
 		return rotObject;
 	}
 
-	void DrawAxisAndColorObjects(RotationObject rot) {
+	RotationObject CreateRotationObject (string name, GameObject goToRotateAround, GameObject pointForAngleCalc, Vector3 rotationAxis, Vector3 axisToZero, Vector3 axisForAngleCalc, Vector3 signAxis, params GameObject[] values) {
+		RotationObject rotObject = new RotationObject ();
+		rotObject.name = name;
+		rotObject.goToRotateAround = goToRotateAround;
+		rotObject.pointForAngleCalc = pointForAngleCalc;
+		rotObject.rotationAxis = rotationAxis;
+		rotObject.axisToZero = axisToZero;
+		rotObject.axisForAngleCalc = axisForAngleCalc;
+		rotObject.signAxis = signAxis;
+		foreach (GameObject go in values) {
+			if (go == null) {
+				print ("Can't get gameObject");
+			}
+			rotObject.dependantObjects.Add (go);
+		}
+		return rotObject;
+	}
+
+	void DrawAxisAndColorObjects (RotationObject rot) {
 		CreateLineRenderers ();
-		DrawRotation (rot);
+		DrawAxisRotation (rot);
 		ColorObjectsRed (rot);
 	}
 
-	void DrawRotation (RotationObject rot) {
+	void DrawAxisRotation (RotationObject rot) {
 		lineRenderer.SetVertexCount (2);
 		lineRenderer.enabled = true;
 		lineRenderer.material = new Material (Shader.Find ("Particles/Additive"));
@@ -227,13 +246,13 @@ public class GameControl : MonoBehaviour {
 		lineRenderer.SetWidth (0.2f, 0.2f);
 		lineRenderer.useWorldSpace = false;
 		Vector3 point1 = rot.goToRotateAround.transform.position + (rot.goToRotateAround.transform.rotation * rot.rotationAxis * 3);
-		Vector3 point2 = rot.goToRotateAround.transform.position + (rot.goToRotateAround.transform.rotation *rot.rotationAxis * -3);
+		Vector3 point2 = rot.goToRotateAround.transform.position + (rot.goToRotateAround.transform.rotation * rot.rotationAxis * -3);
 		int i = 0;
 		lineRenderer.SetPosition (i++, point1);
 		lineRenderer.SetPosition (i++, point2);
 	}
 
-	void ColorObjectsRed(RotationObject rot) {
+	void ColorObjectsRed (RotationObject rot) {
 		foreach (GameObject go in rot.dependantObjects) {
 			if (go != null) {
 				Renderer renderer = go.GetComponent<Renderer> ();
@@ -243,8 +262,9 @@ public class GameControl : MonoBehaviour {
 		}
 	}
 
-	void UnColorObjects() {
-		if (coloredObjects.Count == 0) return;
+	void UnColorObjects () {
+		if (coloredObjects.Count == 0)
+			return;
 		foreach (GameObject go in coloredObjects) {
 			Renderer renderer = go.GetComponent<Renderer> ();
 			renderer.material.color = Color.white;
@@ -252,22 +272,49 @@ public class GameControl : MonoBehaviour {
 		coloredObjects.Clear ();
 	}
 
-	void DrawUI(RotationObject rot) {
-		rotationObjectName.text = "" + rot.name;
+	void DrawUI (RotationObject rot) {
+		rotationObjectName.text = rot.name;
+
 		Vector3 targetDir = rot.goToRotateAround.transform.position - rot.pointForAngleCalc.transform.position;
-		angleX.text = "AngleX " + Vector3.Angle(targetDir, Vector3.right);
-		angleY.text = "AngleY " + Vector3.Angle(targetDir, Vector3.up);
-		angleZ.text = "Anglez " + Vector3.Angle(targetDir, Vector3.forward);
+		Vector3 targetDirForDebug = targetDir;
+		targetDir = rot.goToRotateAround.transform.InverseTransformDirection (targetDir);
+		Vector3 targetDir2ForDebug = targetDir;
+
+		if (rot.axisToZero == Vector3.right) {
+			targetDir.x = 0;
+		} else if (rot.axisToZero == Vector3.up) {
+			targetDir.y = 0;
+		} else if (rot.axisToZero == Vector3.forward) {
+			targetDir.z = 0;
+		}
+
+		bool isPositive = true;
+		if (rot.signAxis == Vector3.right) {
+			isPositive = targetDir.x >= 0; 
+		} else if (rot.signAxis == Vector3.up) {
+			isPositive = targetDir.y >= 0;
+		} else if (rot.signAxis == Vector3.forward) {
+			isPositive = targetDir.z >= 0;
+		}
+
+		float angle = Vector3.Angle (rot.axisForAngleCalc, targetDir) * (isPositive ? 1 : -1);
+		angleX.text = "Angle " + Vector3.Angle (rot.axisForAngleCalc, targetDir) * (isPositive ? 1 : -1);
+
+		if (Input.GetKey (KeyCode.B)) {
+			print ("Point1 " + rot.goToRotateAround.transform.position + " Point2 " + rot.pointForAngleCalc.transform.position + " targetDir " + targetDirForDebug + " targetDir2 " + targetDir2ForDebug);
+			print (rot.name + " Angle " + angle + " rotaxis " +rot.rotationAxis + " axisToZero " + rot.axisToZero + " axis for anglecalc " + rot.axisForAngleCalc + " targetDir " + targetDir);
+		}
+
 	}
 
-	void RotateObject(RotationObject ro, int direction) {
-		
+	void RotateObject (RotationObject ro, int direction) {
+
 		foreach (GameObject go in ro.dependantObjects) {
 			if (go != null) {
-				Vector3 rotationFrom = go.transform.position;
-				Quaternion actualRotation = go.transform.rotation;
+				//Vector3 rotationFrom = go.transform.position;
+				//Quaternion actualRotation = go.transform.rotation;
 				//print ("Game Object: " + go.name + " AroundObject : " + ro.goToRotateAround.name + " go pos " + go.transform.position + " axis " + ro.rotationAxis );
-				go.transform.RotateAround (ro.goToRotateAround.transform.position, ro.goToRotateAround.transform.rotation * ro.rotationAxis, (1f * direction));
+				go.transform.RotateAround (ro.goToRotateAround.transform.position, ro.goToRotateAround.transform.rotation * ro.rotationAxis, (0.5f * direction));
 			}
 		}
 	}
@@ -282,15 +329,13 @@ public class GameControl : MonoBehaviour {
 		}
 	}
 
-	void CreateLineRenderers() {
+	void CreateLineRenderers () {
+		
 		if (lineRenderer == null) {
 			lineRenderer = GetComponent<LineRenderer> ();
 			if (lineRenderer == null) {
 				lineRenderer = gameObject.AddComponent<LineRenderer> ();
 			}
-		}
-		if (lineRenderer == null) {
-			lineRenderer = GetComponent<LineRenderer> ();
 		}
 
 	}

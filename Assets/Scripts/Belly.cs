@@ -5,10 +5,9 @@ using System.Collections;
 public class Belly : MonoBehaviour {
 
 	private LineRenderer lineRenderer;
+	private float fps;
 
 	GameObject betweenShoulders;
-	GameObject leftShoulder;
-	GameObject rightShoulder;
 	GameObject rightHip;
 	GameObject leftHip;
 	GameObject belly;
@@ -17,17 +16,17 @@ public class Belly : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (lineRenderer == null) {
-			lineRenderer = GetComponent<LineRenderer>();
+			lineRenderer = GetComponent<LineRenderer> ();
 		}
 		//Get references to other objects
-		betweenShoulders = GameObject.Find("BetweenShoulders");
-		leftShoulder = GameObject.Find("LeftShoulder");
-		rightShoulder = GameObject.Find("RightShoulder");
-		rightHip = GameObject.Find("RightHip");
-		leftHip = GameObject.Find("LeftHip");
+		betweenShoulders = GameObject.Find ("BetweenShoulders");
+		rightHip = GameObject.Find ("RightHip");
+		leftHip = GameObject.Find ("LeftHip");
 		head = GameObject.Find ("Head");
 
-		belly = GameObject.Find("Belly");
+		belly = GameObject.Find ("Belly");
+
+		//StartCoroutine (RecalculateFPS);
 
 		//calcAngles ();
 	}
@@ -37,7 +36,7 @@ public class Belly : MonoBehaviour {
 		createBellyLines ();
 	}
 
-	void createBellyLines() {
+	void createBellyLines () {
 
 		CreateLineRenderers ();
 		lineRenderer.SetVertexCount (6);
@@ -56,11 +55,11 @@ public class Belly : MonoBehaviour {
 		lineRenderer.SetPosition (i++, belly.transform.position);
 
 		lineRenderer.SetPosition (i++, belly.transform.position); 
-		lineRenderer.SetPosition (i++, Vector3.Lerp(leftHip.transform.position, rightHip.transform.position, 0.5F));
+		lineRenderer.SetPosition (i++, Vector3.Lerp (leftHip.transform.position, rightHip.transform.position, 0.5F));
 
 	}
 
-	void CreateLineRenderers() {
+	void CreateLineRenderers () {
 		if (lineRenderer == null) {
 			lineRenderer = GetComponent<LineRenderer> ();
 			if (lineRenderer == null) {
@@ -71,6 +70,14 @@ public class Belly : MonoBehaviour {
 			lineRenderer = GetComponent<LineRenderer> ();
 		}
 			
+	}
+
+	// Coroutine example
+	private IEnumerator RecalculateFPS () {
+		while (true) {
+			fps = 1 / Time.deltaTime; 
+			yield return new WaitForSeconds (1);
+		}
 	}
 
 }

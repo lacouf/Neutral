@@ -95,7 +95,15 @@ public class GameControl : MonoBehaviour {
 		RotationStruct.Add (CreateRotationObject ("Hips around X axis", betweenHips, leftHip, Vector3.forward, Vector3.forward, Vector3.left, Vector3.up, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
 		RotationStruct.Add (CreateRotationObject ("Hips around Y axis", betweenHips, leftHip, Vector3.up, Vector3.up, Vector3.left, Vector3.forward, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
 		RotationStruct.Add (CreateRotationObject ("Hips and legs around belly", belly, betweenHips, Vector3.right, Vector3.right, Vector3.back, Vector3.up, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
-	}
+        RotationStruct.Add (CreateRotationObject ("Left knee around left hips around Y axis", leftHip, leftKnee, Vector3.up, Vector3.up, Vector3.back, Vector3.left, leftKnee, leftFoot));
+        RotationStruct.Add(CreateRotationObject("Left knee around left hips around X axis", leftHip, leftKnee, Vector3.right, Vector3.right, Vector3.back, Vector3.up, leftKnee, leftFoot));
+        RotationStruct.Add(CreateRotationObject("Right knee around Right hips around Y axis", rightHip, rightKnee, Vector3.up, Vector3.up, Vector3.back, Vector3.right, rightKnee, rightFoot));
+        RotationStruct.Add(CreateRotationObject("Right knee around Right hips around X axis", rightHip, rightKnee, Vector3.right, Vector3.right, Vector3.back, Vector3.up, rightKnee, rightFoot));
+        RotationStruct.Add(CreateRotationObject("Left foot around Left knee around Y axis", leftKnee, leftFoot, Vector3.up, Vector3.up, Vector3.back, Vector3.left, leftFoot));
+        RotationStruct.Add(CreateRotationObject("Left foot around Left knee around X axis", leftKnee, leftFoot, Vector3.right, Vector3.right, Vector3.back, Vector3.up, leftFoot));
+        RotationStruct.Add(CreateRotationObject("Right foot around Right knee around Y axis", rightKnee, rightFoot, Vector3.up, Vector3.up, Vector3.back, Vector3.right, rightFoot));
+        RotationStruct.Add(CreateRotationObject("Right foot around Right knee around X axis", rightKnee, rightFoot, Vector3.right, Vector3.right, Vector3.back, Vector3.up, rightFoot));
+    }
 
 	void Update () {
 		bool needRedraw = false;
@@ -123,95 +131,6 @@ public class GameControl : MonoBehaviour {
 			DrawAxisAndColorObjects (rotationObject);
 			DrawUI (rotationObject);
 		}
-	}
-
-	void FindGameObjects () {
-		belly = GameObject.Find (Constants.BELLY);
-		head = GameObject.Find (Constants.HEAD);
-		betweenShoulders = GameObject.Find (Constants.BETWEENSHOULDERS);
-		leftShoulder = GameObject.Find (Constants.LEFTSHOULDER);
-		leftElbow = GameObject.Find (Constants.LEFTELBOW);
-		leftHand = GameObject.Find (Constants.LEFTHAND);
-		rightShoulder = GameObject.Find (Constants.RIGHTSHOULDER);
-		rightElbow = GameObject.Find (Constants.RIGHTELBOW);
-		rightHand = GameObject.Find (Constants.RIGHTHAND);
-		betweenHips = GameObject.Find (Constants.BETWEENHIPS);
-		leftHip = GameObject.Find (Constants.LEFTHIP);
-		leftKnee = GameObject.Find (Constants.LEFTKNEE);
-		leftFoot = GameObject.Find (Constants.LEFTFOOT);
-		rightHip = GameObject.Find (Constants.RIGHTHIP);
-		rightKnee = GameObject.Find (Constants.RIGHTKNEE);
-		rightFoot = GameObject.Find (Constants.RIGHTFOOT);
-
-		if (belly == null)
-			print ("belly null");
-		if (head == null)
-			print ("head null");
-		if (betweenShoulders == null)
-			print ("betweenShoulders null");
-		if (leftShoulder == null)
-			print ("leftShoulder null");
-		if (leftElbow == null)
-			print ("leftElbow null");
-		if (leftHand == null)
-			print ("leftHand null");
-		if (rightShoulder == null)
-			print ("rightShoulder null");
-		if (rightElbow == null)
-			print ("rightElbow null");
-		if (rightHand == null)
-			print ("rightHand null");
-		if (betweenHips == null)
-			print ("betweenHips null");
-		if (leftHip == null)
-			print ("leftHip null");
-		if (leftKnee == null)
-			print ("leftKnee null");
-		if (leftFoot == null)
-			print ("leftFoot null");
-		if (rightHip == null)
-			print ("rightHip null");
-		if (rightKnee == null)
-			print ("rightKnee null");
-		if (rightFoot == null)
-			print ("rightFoot null");
-	}
-
-	public void Save () {
-		BinaryFormatter bf = new BinaryFormatter ();
-		//print ("Path: " + Application.persistentDataPath);
-		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
-		PlayerData data = new PlayerData ();
-		data.someData = 1;
-		data.someOtherData = 2;
-		bf.Serialize (file, data);
-		file.Close ();
-	}
-
-	public void Load () {
-		if (File.Exists (Application.persistentDataPath + "playerInfo.dat")) {
-			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
-			playerData = (PlayerData)bf.Deserialize (file);
-			file.Close ();
-		}
-
-	}
-
-	RotationObject CreateRotationObject (string name, GameObject goToRotateAround, GameObject pointForAngleCalc, bool inverse, Vector3 axis, params GameObject[] values) {
-		RotationObject rotObject = new RotationObject ();
-		rotObject.name = name;
-		rotObject.goToRotateAround = goToRotateAround;
-		rotObject.pointForAngleCalc = pointForAngleCalc;
-		rotObject.sub90 = inverse;
-		rotObject.rotationAxis = axis;
-		foreach (GameObject go in values) {
-			if (go == null) {
-				print ("Can't get gameObject");
-			}
-			rotObject.dependantObjects.Add (go);
-		}
-		return rotObject;
 	}
 
 	RotationObject CreateRotationObject (string name, GameObject goToRotateAround, GameObject pointForAngleCalc, Vector3 rotationAxis, Vector3 axisToZero, Vector3 axisForAngleCalc, Vector3 signAxis, params GameObject[] values) {
@@ -272,7 +191,8 @@ public class GameControl : MonoBehaviour {
 		coloredObjects.Clear ();
 	}
 
-	void DrawUI (RotationObject rot) {
+	void DrawUI (RotationObject rot)
+    {
 		rotationObjectName.text = rot.name;
 
 		Vector3 targetDir = rot.goToRotateAround.transform.position - rot.pointForAngleCalc.transform.position;
@@ -289,15 +209,29 @@ public class GameControl : MonoBehaviour {
 		}
 
 		bool isPositive = true;
-		if (rot.signAxis == Vector3.right) {
+		if (rot.signAxis == Vector3.right)
+        {
 			isPositive = targetDir.x >= 0; 
-		} else if (rot.signAxis == Vector3.up) {
+		} else if (rot.signAxis == Vector3.up)
+        {
 			isPositive = targetDir.y >= 0;
-		} else if (rot.signAxis == Vector3.forward) {
+		} else if (rot.signAxis == Vector3.forward)
+        {
 			isPositive = targetDir.z >= 0;
-		}
+		} else if (rot.signAxis == Vector3.left)
+        {
+            isPositive = targetDir.x <= 0;
+        }
+        else if (rot.signAxis == Vector3.down)
+        {
+            isPositive = targetDir.y <= 0;
+        }
+        else if (rot.signAxis == Vector3.back)
+        {
+            isPositive = targetDir.z <= 0;
+        }
 
-		float angle = Vector3.Angle (rot.axisForAngleCalc, targetDir) * (isPositive ? 1 : -1);
+        float angle = Vector3.Angle (rot.axisForAngleCalc, targetDir) * (isPositive ? 1 : -1);
 		angleX.text = "Angle " + Vector3.Angle (rot.axisForAngleCalc, targetDir) * (isPositive ? 1 : -1);
 
 		if (Input.GetKey (KeyCode.B)) {
@@ -340,4 +274,80 @@ public class GameControl : MonoBehaviour {
 
 	}
 
+    public void Save()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        //print ("Path: " + Application.persistentDataPath);
+        FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
+        PlayerData data = new PlayerData();
+        data.someData = 1;
+        data.someOtherData = 2;
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    public void Load()
+    {
+        if (File.Exists(Application.persistentDataPath + "playerInfo.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+            playerData = (PlayerData)bf.Deserialize(file);
+            file.Close();
+        }
+
+    }
+
+    void FindGameObjects()
+    {
+        belly = GameObject.Find(Constants.BELLY);
+        head = GameObject.Find(Constants.HEAD);
+        betweenShoulders = GameObject.Find(Constants.BETWEENSHOULDERS);
+        leftShoulder = GameObject.Find(Constants.LEFTSHOULDER);
+        leftElbow = GameObject.Find(Constants.LEFTELBOW);
+        leftHand = GameObject.Find(Constants.LEFTHAND);
+        rightShoulder = GameObject.Find(Constants.RIGHTSHOULDER);
+        rightElbow = GameObject.Find(Constants.RIGHTELBOW);
+        rightHand = GameObject.Find(Constants.RIGHTHAND);
+        betweenHips = GameObject.Find(Constants.BETWEENHIPS);
+        leftHip = GameObject.Find(Constants.LEFTHIP);
+        leftKnee = GameObject.Find(Constants.LEFTKNEE);
+        leftFoot = GameObject.Find(Constants.LEFTFOOT);
+        rightHip = GameObject.Find(Constants.RIGHTHIP);
+        rightKnee = GameObject.Find(Constants.RIGHTKNEE);
+        rightFoot = GameObject.Find(Constants.RIGHTFOOT);
+
+        if (belly == null)
+            print("belly null");
+        if (head == null)
+            print("head null");
+        if (betweenShoulders == null)
+            print("betweenShoulders null");
+        if (leftShoulder == null)
+            print("leftShoulder null");
+        if (leftElbow == null)
+            print("leftElbow null");
+        if (leftHand == null)
+            print("leftHand null");
+        if (rightShoulder == null)
+            print("rightShoulder null");
+        if (rightElbow == null)
+            print("rightElbow null");
+        if (rightHand == null)
+            print("rightHand null");
+        if (betweenHips == null)
+            print("betweenHips null");
+        if (leftHip == null)
+            print("leftHip null");
+        if (leftKnee == null)
+            print("leftKnee null");
+        if (leftFoot == null)
+            print("leftFoot null");
+        if (rightHip == null)
+            print("rightHip null");
+        if (rightKnee == null)
+            print("rightKnee null");
+        if (rightFoot == null)
+            print("rightFoot null");
+    }
 }

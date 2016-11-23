@@ -17,12 +17,33 @@ public class GameControl : MonoBehaviour {
 	// UI
 	DisplayCanvas displayCanvas;
 	UnityEngine.UI.Text rotationObjectName;
-	UnityEngine.UI.Text angleX;
-	UnityEngine.UI.Text angleY;
-	UnityEngine.UI.Text angleZ;
+	UnityEngine.UI.Text angle1;
+	UnityEngine.UI.Text angle2;
+	UnityEngine.UI.Text angle3;
+    UnityEngine.UI.Text angle4;
+    UnityEngine.UI.Text angle5;
+    UnityEngine.UI.Text angle6;
+    UnityEngine.UI.Text angle7;
+    UnityEngine.UI.Text angle8;
+    UnityEngine.UI.Text angle9;
+    UnityEngine.UI.Text angle10;
+    UnityEngine.UI.Text angle11;
+    UnityEngine.UI.Text angle12;
+    UnityEngine.UI.Text angle13;
+    UnityEngine.UI.Text angle14;
+    UnityEngine.UI.Text angle15;
+    UnityEngine.UI.Text angle16;
+    UnityEngine.UI.Text angle17;
+    UnityEngine.UI.Text angle18;
+    UnityEngine.UI.Text angle19;
+    UnityEngine.UI.Text angle20;
+    UnityEngine.UI.Text angle21;
+    UnityEngine.UI.Text angle22;
+    UnityEngine.UI.Text angle23;
+    private List<UnityEngine.UI.Text> angles = new List<UnityEngine.UI.Text>();
 
-	// GameObjects
-	GameObject belly;
+    // GameObjects
+    GameObject belly;
 	GameObject head;
 	GameObject betweenShoulders;
 	GameObject leftShoulder;
@@ -50,59 +71,33 @@ public class GameControl : MonoBehaviour {
 
 		FindGameObjects ();
 
-		if (displayCanvas == null) {
-			displayCanvas = (DisplayCanvas)FindObjectOfType (typeof(DisplayCanvas));
-			//print ("Display Canvas " + displayCanvas);
-			if (displayCanvas != null) {
-				
-				foreach (Transform child in displayCanvas.transform) {
-					//print ("Child name: " + child.gameObject.name);
-					if (child.gameObject.name.Equals ("Panel")) {
-						RectTransform panel = child.gameObject.GetComponent<RectTransform> ();
-						foreach (Transform child2 in panel.transform) {
-							//print ("Child2 " + child2.gameObject.name);
-							if (child2.name.Equals ("RotationObjectText")) {
-								rotationObjectName = child2.gameObject.GetComponent<UnityEngine.UI.Text> ();
-								rotationObjectName.text = "Rotation Object";
-							} else if (child2.name.Equals ("AngleX")) {
-								angleX = child2.gameObject.GetComponent<UnityEngine.UI.Text> ();
-								angleX.text = "AngleX";
-							} else if (child2.name.Equals ("AngleY")) {
-								angleY = child2.gameObject.GetComponent<UnityEngine.UI.Text> ();
-								angleY.text = "AngleY";
-							} else if (child2.name.Equals ("AngleZ")) {
-								angleZ = child2.gameObject.GetComponent<UnityEngine.UI.Text> ();
-								angleZ.text = "AngleZ";
-							}
-						}
-					}
-//					if (child.gameObject.name.Equals (SHOTSTEXT)) {
-//						shotsText = child.gameObject.GetComponent<UnityEngine.UI.Text> ();
-//						shotsText.text = "2000";
-//					}
-				}
-			}
-		}
+        FindAngleUI();
 			
 		RotationStruct.Add (CreateRotationObject ("Head & Shoulders around belly", belly, betweenShoulders, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, head, betweenShoulders, leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
 		RotationStruct.Add (CreateRotationObject ("Left shoulder around spine", betweenShoulders, leftShoulder, Vector3.forward, Vector3.forward, Vector3.left, Vector3.up, leftShoulder, leftElbow, leftHand));
-		RotationStruct.Add (CreateRotationObject ("right shoulder around spine", betweenShoulders, rightShoulder, Vector3.forward, Vector3.forward, Vector3.right, Vector3.up, rightShoulder, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Right shoulder around spine", betweenShoulders, rightShoulder, Vector3.forward, Vector3.forward, Vector3.right, Vector3.up, rightShoulder, rightElbow, rightHand));
 		RotationStruct.Add (CreateRotationObject ("Shoulders around Y axis", betweenShoulders, head, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, head, leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
+
 		RotationStruct.Add (CreateRotationObject ("Left Elbows around shoulders X axis", leftShoulder, leftElbow, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, leftElbow, leftHand));
-		RotationStruct.Add (CreateRotationObject ("Right Elbows around shoulders X axis", rightShoulder, rightElbow, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, rightElbow, rightHand));
 		RotationStruct.Add (CreateRotationObject ("Left Elbows around shoulders Y axis", leftShoulder, leftElbow, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, leftElbow, leftHand));
+        RotationStruct.Add (CreateRotationObject ("Left Hand around Elbow X axis", leftElbow, leftHand, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, leftHand));
+        RotationStruct.Add (CreateRotationObject ("Left Hand around Elbow Y axis", leftElbow, leftHand, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, leftHand));
+        RotationStruct.Add (CreateRotationObject ("Right Elbows around shoulders X axis", rightShoulder, rightElbow, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, rightElbow, rightHand));
 		RotationStruct.Add (CreateRotationObject ("Right Elbows around shoulders Y axis", rightShoulder, rightElbow, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject ("Hips around X axis", betweenHips, leftHip, Vector3.forward, Vector3.forward, Vector3.left, Vector3.up, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Right Hand around Elbow X axis", rightElbow, rightHand, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, rightHand));
+        RotationStruct.Add (CreateRotationObject ("Right Hand around Elbow Y axis", rightElbow, rightHand, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, rightHand));
+
+        RotationStruct.Add (CreateRotationObject ("Hips around X axis", betweenHips, leftHip, Vector3.forward, Vector3.forward, Vector3.left, Vector3.up, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
 		RotationStruct.Add (CreateRotationObject ("Hips around Y axis", betweenHips, leftHip, Vector3.up, Vector3.up, Vector3.left, Vector3.forward, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
 		RotationStruct.Add (CreateRotationObject ("Hips and legs around belly", belly, betweenHips, Vector3.right, Vector3.right, Vector3.back, Vector3.up, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
         RotationStruct.Add (CreateRotationObject ("Left knee around left hips around Y axis", leftHip, leftKnee, Vector3.up, Vector3.up, Vector3.back, Vector3.left, leftKnee, leftFoot));
-        RotationStruct.Add(CreateRotationObject("Left knee around left hips around X axis", leftHip, leftKnee, Vector3.right, Vector3.right, Vector3.back, Vector3.up, leftKnee, leftFoot));
-        RotationStruct.Add(CreateRotationObject("Right knee around Right hips around Y axis", rightHip, rightKnee, Vector3.up, Vector3.up, Vector3.back, Vector3.right, rightKnee, rightFoot));
-        RotationStruct.Add(CreateRotationObject("Right knee around Right hips around X axis", rightHip, rightKnee, Vector3.right, Vector3.right, Vector3.back, Vector3.up, rightKnee, rightFoot));
-        RotationStruct.Add(CreateRotationObject("Left foot around Left knee around Y axis", leftKnee, leftFoot, Vector3.up, Vector3.up, Vector3.back, Vector3.left, leftFoot));
-        RotationStruct.Add(CreateRotationObject("Left foot around Left knee around X axis", leftKnee, leftFoot, Vector3.right, Vector3.right, Vector3.back, Vector3.up, leftFoot));
-        RotationStruct.Add(CreateRotationObject("Right foot around Right knee around Y axis", rightKnee, rightFoot, Vector3.up, Vector3.up, Vector3.back, Vector3.right, rightFoot));
-        RotationStruct.Add(CreateRotationObject("Right foot around Right knee around X axis", rightKnee, rightFoot, Vector3.right, Vector3.right, Vector3.back, Vector3.up, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Left knee around left hips around X axis", leftHip, leftKnee, Vector3.right, Vector3.right, Vector3.back, Vector3.up, leftKnee, leftFoot));
+        RotationStruct.Add (CreateRotationObject ("Right knee around Right hips around Y axis", rightHip, rightKnee, Vector3.up, Vector3.up, Vector3.back, Vector3.right, rightKnee, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Right knee around Right hips around X axis", rightHip, rightKnee, Vector3.right, Vector3.right, Vector3.back, Vector3.up, rightKnee, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Left foot around Left knee around Y axis", leftKnee, leftFoot, Vector3.up, Vector3.up, Vector3.back, Vector3.left, leftFoot));
+        RotationStruct.Add (CreateRotationObject ("Left foot around Left knee around X axis", leftKnee, leftFoot, Vector3.right, Vector3.right, Vector3.back, Vector3.up, leftFoot));
+        RotationStruct.Add (CreateRotationObject ("Right foot around Right knee around Y axis", rightKnee, rightFoot, Vector3.up, Vector3.up, Vector3.back, Vector3.right, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Right foot around Right knee around X axis", rightKnee, rightFoot, Vector3.right, Vector3.right, Vector3.back, Vector3.up, rightFoot));
     }
 
 	void Update () {
@@ -191,8 +186,7 @@ public class GameControl : MonoBehaviour {
 		coloredObjects.Clear ();
 	}
 
-	void DrawUI (RotationObject rot)
-    {
+	void DrawUI (RotationObject rot) {
 		rotationObjectName.text = rot.name;
 
 		Vector3 targetDir = rot.goToRotateAround.transform.position - rot.pointForAngleCalc.transform.position;
@@ -209,30 +203,26 @@ public class GameControl : MonoBehaviour {
 		}
 
 		bool isPositive = true;
-		if (rot.signAxis == Vector3.right)
-        {
+		if (rot.signAxis == Vector3.right) {
 			isPositive = targetDir.x >= 0; 
-		} else if (rot.signAxis == Vector3.up)
-        {
+		} else if (rot.signAxis == Vector3.up) {
 			isPositive = targetDir.y >= 0;
-		} else if (rot.signAxis == Vector3.forward)
-        {
+		} else if (rot.signAxis == Vector3.forward) {
 			isPositive = targetDir.z >= 0;
-		} else if (rot.signAxis == Vector3.left)
-        {
+		} else if (rot.signAxis == Vector3.left) {
             isPositive = targetDir.x <= 0;
-        }
-        else if (rot.signAxis == Vector3.down)
-        {
+        } else if (rot.signAxis == Vector3.down) {
             isPositive = targetDir.y <= 0;
-        }
-        else if (rot.signAxis == Vector3.back)
-        {
+        } else if (rot.signAxis == Vector3.back) {
             isPositive = targetDir.z <= 0;
         }
 
         float angle = Vector3.Angle (rot.axisForAngleCalc, targetDir) * (isPositive ? 1 : -1);
-		angleX.text = "Angle " + Vector3.Angle (rot.axisForAngleCalc, targetDir) * (isPositive ? 1 : -1);
+		//angle1.text = "" + angle;
+        int index = FindRotationObjectPosition(rot);
+        if (index != -1) {
+            angles[index].text = "" + angle;
+        }
 
 		if (Input.GetKey (KeyCode.B)) {
 			print ("Point1 " + rot.goToRotateAround.transform.position + " Point2 " + rot.pointForAngleCalc.transform.position + " targetDir " + targetDirForDebug + " targetDir2 " + targetDir2ForDebug);
@@ -241,7 +231,18 @@ public class GameControl : MonoBehaviour {
 
 	}
 
-	void RotateObject (RotationObject ro, int direction) {
+    private int FindRotationObjectPosition(RotationObject rot) {
+        int i = 0;
+        foreach (RotationObject aRot in RotationStruct.RotationObjectsValues()) {
+            if (aRot.name.Equals(rot.name)) {
+                return i;
+            }
+            i++;
+        }
+        return -1;
+    }
+
+    void RotateObject (RotationObject ro, int direction) {
 
 		foreach (GameObject go in ro.dependantObjects) {
 			if (go != null) {
@@ -349,5 +350,149 @@ public class GameControl : MonoBehaviour {
             print("rightKnee null");
         if (rightFoot == null)
             print("rightFoot null");
+    }
+
+    void FindAngleUI() {
+        if (displayCanvas == null) {
+            displayCanvas = (DisplayCanvas)FindObjectOfType(typeof(DisplayCanvas));
+            //print ("Display Canvas " + displayCanvas);
+            if (displayCanvas != null) {
+
+                foreach (Transform child in displayCanvas.transform) {
+                    //print ("Child name: " + child.gameObject.name);
+                    if (child.gameObject.name.Equals("Panel")) {
+                        RectTransform panel = child.gameObject.GetComponent<RectTransform>();
+                        foreach (Transform child2 in panel.transform) {
+                            //print ("Child2 " + child2.gameObject.name);
+                            if (child2.name.Equals("RotationObjectText"))
+                            {
+                                rotationObjectName = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                                rotationObjectName.text = "Rotation Object";
+                            }
+                            else if (child2.name.Equals("Angle1"))
+                            {
+                                angle1 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle2"))
+                            {
+                                angle2 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle3"))
+                            {
+                                angle3 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle4"))
+                            {
+                                angle4 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle5"))
+                            {
+                                angle5 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle6"))
+                            {
+                                angle6 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle7"))
+                            {
+                                angle7 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle8"))
+                            {
+                                angle8 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle9"))
+                            {
+                                angle9 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle10"))
+                            {
+                                angle10 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle11"))
+                            {
+                                angle11 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle12"))
+                            {
+                                angle12 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle13"))
+                            {
+                                angle13 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle14"))
+                            {
+                                angle14 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle15"))
+                            {
+                                angle15 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle16"))
+                            {
+                                angle16 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle17"))
+                            {
+                                angle17 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle18"))
+                            {
+                                angle18 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle19"))
+                            {
+                                angle19 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle20"))
+                            {
+                                angle20 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle21"))
+                            {
+                                angle21 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle22"))
+                            {
+                                angle22 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                            else if (child2.name.Equals("Angle23"))
+                            {
+                                angle23 = child2.gameObject.GetComponent<UnityEngine.UI.Text>();
+                            }
+                        }
+                    }
+                    //					if (child.gameObject.name.Equals (SHOTSTEXT)) {
+                    //						shotsText = child.gameObject.GetComponent<UnityEngine.UI.Text> ();
+                    //						shotsText.text = "2000";
+                    //					}
+                }
+            }
+        }
+        angles.Add(angle1);
+        angles.Add(angle2);
+        angles.Add(angle3);
+        angles.Add(angle4);
+        angles.Add(angle5);
+        angles.Add(angle6);
+        angles.Add(angle7);
+        angles.Add(angle8);
+        angles.Add(angle9);
+        angles.Add(angle10);
+        angles.Add(angle11);
+        angles.Add(angle12);
+        angles.Add(angle13);
+        angles.Add(angle14);
+        angles.Add(angle15);
+        angles.Add(angle16);
+        angles.Add(angle17);
+        angles.Add(angle18);
+        angles.Add(angle19);
+        angles.Add(angle20);
+        angles.Add(angle21);
+        angles.Add(angle22);
+        angles.Add(angle23);
+
     }
 }

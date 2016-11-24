@@ -73,31 +73,31 @@ public class GameControl : MonoBehaviour {
 
         FindAngleUI();
 			
-		RotationStruct.Add (CreateRotationObject ("Head & Shoulders around belly", belly, betweenShoulders, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, head, betweenShoulders, leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject ("Left shoulder around spine", betweenShoulders, leftShoulder, Vector3.forward, Vector3.forward, Vector3.left, Vector3.up, leftShoulder, leftElbow, leftHand));
-		RotationStruct.Add (CreateRotationObject ("Right shoulder around spine", betweenShoulders, rightShoulder, Vector3.forward, Vector3.forward, Vector3.right, Vector3.up, rightShoulder, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject ("Shoulders around Y axis", betweenShoulders, head, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, head, leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Head & Shoulders around belly", belly, betweenShoulders, Vector3.right,  Vector3.forward, Vector3.up, head, betweenShoulders, leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Hips and legs around belly", belly, betweenHips, Vector3.right, Vector3.back, Vector3.up, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+		RotationStruct.Add (CreateRotationObject ("Left shoulder around spine", betweenShoulders, leftShoulder, Vector3.forward, Vector3.left, Vector3.up, leftShoulder, leftElbow, leftHand));
+		RotationStruct.Add (CreateRotationObject ("Right shoulder around spine", betweenShoulders, rightShoulder, Vector3.forward, Vector3.right, Vector3.up, rightShoulder, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Shoulders around Y axis", betweenShoulders, head, Vector3.up, Vector3.forward, Vector3.right, head, leftShoulder, leftElbow, leftHand, rightShoulder, rightElbow, rightHand));
 
-		RotationStruct.Add (CreateRotationObject ("Left Elbows around shoulders X axis", leftShoulder, leftElbow, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, leftElbow, leftHand));
-		RotationStruct.Add (CreateRotationObject ("Left Elbows around shoulders Y axis", leftShoulder, leftElbow, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, leftElbow, leftHand));
-        RotationStruct.Add (CreateRotationObject ("Left Hand around Elbow X axis", leftElbow, leftHand, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, leftHand));
-        RotationStruct.Add (CreateRotationObject ("Left Hand around Elbow Y axis", leftElbow, leftHand, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, leftHand));
-        RotationStruct.Add (CreateRotationObject ("Right Elbows around shoulders X axis", rightShoulder, rightElbow, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, rightElbow, rightHand));
-		RotationStruct.Add (CreateRotationObject ("Right Elbows around shoulders Y axis", rightShoulder, rightElbow, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, rightElbow, rightHand));
-        RotationStruct.Add (CreateRotationObject ("Right Hand around Elbow X axis", rightElbow, rightHand, Vector3.right, Vector3.right, Vector3.forward, Vector3.up, rightHand));
-        RotationStruct.Add (CreateRotationObject ("Right Hand around Elbow Y axis", rightElbow, rightHand, Vector3.up, Vector3.up, Vector3.forward, Vector3.right, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Left Elb around shoulders X", leftShoulder, leftElbow, Vector3.right, Vector3.forward, Vector3.up, leftElbow, leftHand));
+        RotationStruct.Add (CreateRotationObject ("Right Elb around shoulders X", rightShoulder, rightElbow, Vector3.right, Vector3.forward, Vector3.up, rightElbow, rightHand));
+		RotationStruct.Add (CreateRotationObject ("Left Elb around shoulders Y", leftShoulder, leftElbow, Vector3.up, Vector3.forward, Vector3.right, leftElbow, leftHand));
+		RotationStruct.Add (CreateRotationObject ("Right Elb around shoulders Y", rightShoulder, rightElbow, Vector3.up, Vector3.forward, Vector3.right, rightElbow, rightHand));
+        RotationStruct.Add (CreateRotationObject ("Left Hand around Elb X", leftElbow, leftHand, Vector3.right, Vector3.forward, Vector3.up, leftHand));
+        RotationStruct.Add (CreateRotationObject ("Right Hand around Elb X", rightElbow, rightHand, Vector3.right, Vector3.forward, Vector3.up, rightHand));
+        RotationStruct.Add (CreateRotationObject ("Left Hand around Elb Y", leftElbow, leftHand, Vector3.up, Vector3.forward, Vector3.right, leftHand));
+        RotationStruct.Add (CreateRotationObject ("Right Hand around Elb Y", rightElbow, rightHand, Vector3.up, Vector3.forward, Vector3.right, rightHand));
 
-        RotationStruct.Add (CreateRotationObject ("Hips around X axis", betweenHips, leftHip, Vector3.forward, Vector3.forward, Vector3.left, Vector3.up, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
-		RotationStruct.Add (CreateRotationObject ("Hips around Y axis", betweenHips, leftHip, Vector3.up, Vector3.up, Vector3.left, Vector3.forward, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
-		RotationStruct.Add (CreateRotationObject ("Hips and legs around belly", belly, betweenHips, Vector3.right, Vector3.right, Vector3.back, Vector3.up, betweenHips, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
-        RotationStruct.Add (CreateRotationObject ("Left knee around left hips around Y axis", leftHip, leftKnee, Vector3.up, Vector3.up, Vector3.back, Vector3.left, leftKnee, leftFoot));
-        RotationStruct.Add (CreateRotationObject ("Left knee around left hips around X axis", leftHip, leftKnee, Vector3.right, Vector3.right, Vector3.back, Vector3.up, leftKnee, leftFoot));
-        RotationStruct.Add (CreateRotationObject ("Right knee around Right hips around Y axis", rightHip, rightKnee, Vector3.up, Vector3.up, Vector3.back, Vector3.right, rightKnee, rightFoot));
-        RotationStruct.Add (CreateRotationObject ("Right knee around Right hips around X axis", rightHip, rightKnee, Vector3.right, Vector3.right, Vector3.back, Vector3.up, rightKnee, rightFoot));
-        RotationStruct.Add (CreateRotationObject ("Left foot around Left knee around Y axis", leftKnee, leftFoot, Vector3.up, Vector3.up, Vector3.back, Vector3.left, leftFoot));
-        RotationStruct.Add (CreateRotationObject ("Left foot around Left knee around X axis", leftKnee, leftFoot, Vector3.right, Vector3.right, Vector3.back, Vector3.up, leftFoot));
-        RotationStruct.Add (CreateRotationObject ("Right foot around Right knee around Y axis", rightKnee, rightFoot, Vector3.up, Vector3.up, Vector3.back, Vector3.right, rightFoot));
-        RotationStruct.Add (CreateRotationObject ("Right foot around Right knee around X axis", rightKnee, rightFoot, Vector3.right, Vector3.right, Vector3.back, Vector3.up, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Hips around X axis", betweenHips, leftHip, Vector3.forward, Vector3.left, Vector3.up, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+		RotationStruct.Add (CreateRotationObject ("Hips around Y axis", betweenHips, leftHip, Vector3.up, Vector3.left, Vector3.forward, leftHip, leftKnee, leftFoot, rightHip, rightKnee, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Left knee around hips Y", leftHip, leftKnee, Vector3.up, Vector3.back, Vector3.left, leftKnee, leftFoot));
+        RotationStruct.Add (CreateRotationObject ("Right knee around hips Y", rightHip, rightKnee, Vector3.up, Vector3.back, Vector3.right, rightKnee, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Left knee around hips X", leftHip, leftKnee, Vector3.right, Vector3.back, Vector3.up, leftKnee, leftFoot));
+        RotationStruct.Add (CreateRotationObject ("Right knee around hips X", rightHip, rightKnee, Vector3.right, Vector3.back, Vector3.up, rightKnee, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Left foot around knee Y", leftKnee, leftFoot, Vector3.up, Vector3.back, Vector3.left, leftFoot));
+        RotationStruct.Add (CreateRotationObject ("Right foot around knee Y", rightKnee, rightFoot, Vector3.up, Vector3.back, Vector3.right, rightFoot));
+        RotationStruct.Add (CreateRotationObject ("Left foot around knee X", leftKnee, leftFoot, Vector3.right, Vector3.back, Vector3.up, leftFoot));
+        RotationStruct.Add (CreateRotationObject ("Right foot around knee X", rightKnee, rightFoot, Vector3.right, Vector3.back, Vector3.up, rightFoot));
     }
 
 	void Update () {
@@ -128,13 +128,12 @@ public class GameControl : MonoBehaviour {
 		}
 	}
 
-	RotationObject CreateRotationObject (string name, GameObject goToRotateAround, GameObject pointForAngleCalc, Vector3 rotationAxis, Vector3 axisToZero, Vector3 axisForAngleCalc, Vector3 signAxis, params GameObject[] values) {
+	RotationObject CreateRotationObject (string name, GameObject goToRotateAround, GameObject pointForAngleCalc, Vector3 rotationAxis, Vector3 axisForAngleCalc, Vector3 signAxis, params GameObject[] values) {
 		RotationObject rotObject = new RotationObject ();
 		rotObject.name = name;
 		rotObject.goToRotateAround = goToRotateAround;
 		rotObject.pointForAngleCalc = pointForAngleCalc;
 		rotObject.rotationAxis = rotationAxis;
-		rotObject.axisToZero = axisToZero;
 		rotObject.axisForAngleCalc = axisForAngleCalc;
 		rotObject.signAxis = signAxis;
 		foreach (GameObject go in values) {
@@ -194,11 +193,11 @@ public class GameControl : MonoBehaviour {
 		targetDir = rot.goToRotateAround.transform.InverseTransformDirection (targetDir);
 		Vector3 targetDir2ForDebug = targetDir;
 
-		if (rot.axisToZero == Vector3.right || rot.axisToZero == Vector3.left) {
+		if (rot.rotationAxis == Vector3.right || rot.rotationAxis == Vector3.left) {
 			targetDir.x = 0;
-		} else if (rot.axisToZero == Vector3.up || rot.axisToZero == Vector3.down) {
+		} else if (rot.rotationAxis == Vector3.up || rot.rotationAxis == Vector3.down) {
 			targetDir.y = 0;
-		} else if (rot.axisToZero == Vector3.forward || rot.axisToZero == Vector3.back) {
+		} else if (rot.rotationAxis == Vector3.forward || rot.rotationAxis == Vector3.back) {
 			targetDir.z = 0;
 		}
 
@@ -226,7 +225,7 @@ public class GameControl : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.B)) {
 			print ("Point1 " + rot.goToRotateAround.transform.position + " Point2 " + rot.pointForAngleCalc.transform.position + " targetDir " + targetDirForDebug + " targetDir2 " + targetDir2ForDebug);
-			print (rot.name + " Angle " + angle + " rotaxis " +rot.rotationAxis + " axisToZero " + rot.axisToZero + " axis for anglecalc " + rot.axisForAngleCalc + " targetDir " + targetDir);
+			print (rot.name + " Angle " + angle + " rotaxis " +rot.rotationAxis + " axis for anglecalc " + rot.axisForAngleCalc + " targetDir " + targetDir);
 		}
 
 	}

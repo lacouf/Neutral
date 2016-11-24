@@ -122,8 +122,8 @@ RectTransform:
   m_RootOrder: 14
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -65}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -77}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &78504228
 MonoBehaviour:
@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Hips around Y axis
+  m_Text: Hips around X axis
 --- !u!222 &78504229
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -350,8 +350,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 477, y: 361}
-  m_SizeDelta: {x: 426, y: 40}
+  m_AnchoredPosition: {x: 475, y: 359}
+  m_SizeDelta: {x: 421, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &262429424
 MonoBehaviour:
@@ -385,7 +385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Left shoulder around spine\t"
+  m_Text: "Hips and legs around belly\t"
 --- !u!222 &262429425
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -532,8 +532,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 477.5, y: 320}
-  m_SizeDelta: {x: 425, y: 40}
+  m_AnchoredPosition: {x: 475, y: 317}
+  m_SizeDelta: {x: 420, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362941862
 MonoBehaviour:
@@ -567,7 +567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right shoulder around spine
+  m_Text: Left shoulder around spine
 --- !u!222 &362941863
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -652,8 +652,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: 237}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: 232}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402554762
 MonoBehaviour:
@@ -687,7 +687,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Left Elb around shoulder X axis
+  m_Text: Shoulders around Y axis
 --- !u!222 &402554763
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -726,8 +726,8 @@ RectTransform:
   m_RootOrder: 10
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: 61}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: 52}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525875245
 MonoBehaviour:
@@ -761,7 +761,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right Elb around shoulder Y axis
+  m_Text: Left Hand around Elb X
 --- !u!222 &525875246
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -800,8 +800,8 @@ RectTransform:
   m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: 94}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: 85}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532858792
 MonoBehaviour:
@@ -835,7 +835,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right Elb around shoulder X axis
+  m_Text: Right Elb around shoulders Y
 --- !u!222 &532858793
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -874,8 +874,8 @@ RectTransform:
   m_RootOrder: 44
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -308}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -326}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541623441
 MonoBehaviour:
@@ -948,8 +948,8 @@ RectTransform:
   m_RootOrder: 35
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 5}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -7}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569759770
 MonoBehaviour:
@@ -1022,8 +1022,8 @@ RectTransform:
   m_RootOrder: 22
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -340}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -360}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &592878969
 MonoBehaviour:
@@ -1057,7 +1057,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right foot around knee Y axis
+  m_Text: Left foot around knee X
 --- !u!222 &592878970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1096,8 +1096,8 @@ RectTransform:
   m_RootOrder: 41
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -202}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -215}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599181145
 MonoBehaviour:
@@ -1170,8 +1170,8 @@ RectTransform:
   m_RootOrder: 24
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 794, y: 400.5}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 400}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &636501311
 MonoBehaviour:
@@ -1244,8 +1244,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 477.5, y: 279}
-  m_SizeDelta: {x: 425, y: 40}
+  m_AnchoredPosition: {x: 475, y: 275}
+  m_SizeDelta: {x: 420, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &682196056
 MonoBehaviour:
@@ -1279,7 +1279,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Shoulders around Y axis
+  m_Text: Right shoulder around spine
 --- !u!222 &682196057
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1318,8 +1318,8 @@ RectTransform:
   m_RootOrder: 46
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -378}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -399}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &731021183
 MonoBehaviour:
@@ -1501,8 +1501,8 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: 124}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: 116}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &760285403
 MonoBehaviour:
@@ -1536,7 +1536,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Left Hand around Elbow Y axis
+  m_Text: Left Elb around shoulders Y
 --- !u!222 &760285404
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1662,8 +1662,8 @@ RectTransform:
   m_RootOrder: 27
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 283}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 276}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &814068197
 MonoBehaviour:
@@ -1996,8 +1996,8 @@ RectTransform:
   m_RootOrder: 17
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -165}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -180}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984408186
 MonoBehaviour:
@@ -2031,7 +2031,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Left knee around hips X axis
+  m_Text: Right knee around hips Y
 --- !u!222 &984408187
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2117,8 +2117,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: 199}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: 193}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1120003335
 MonoBehaviour:
@@ -2152,7 +2152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Left Elb around shoulder Y axis
+  m_Text: Left Elb around shoulders X
 --- !u!222 &1120003336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2191,8 +2191,8 @@ RectTransform:
   m_RootOrder: 45
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -340}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -357}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153840034
 MonoBehaviour:
@@ -2311,8 +2311,8 @@ RectTransform:
   m_RootOrder: 40
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -168}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -178}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195262804
 MonoBehaviour:
@@ -2385,8 +2385,8 @@ RectTransform:
   m_RootOrder: 28
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 243}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 233}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1196092064
 MonoBehaviour:
@@ -2459,8 +2459,8 @@ RectTransform:
   m_RootOrder: 12
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: 1}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -9}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204727292
 MonoBehaviour:
@@ -2494,7 +2494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right Hand around Elbow Y axis
+  m_Text: Left Hand around Elb Y
 --- !u!222 &1204727293
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2533,8 +2533,8 @@ RectTransform:
   m_RootOrder: 21
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -306}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -325}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222367734
 MonoBehaviour:
@@ -2568,7 +2568,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Left foot around knee X axis
+  m_Text: Right foot around knee Y
 --- !u!222 &1222367735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2607,8 +2607,8 @@ RectTransform:
   m_RootOrder: 25
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 362}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 360}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1253937549
 MonoBehaviour:
@@ -2831,8 +2831,8 @@ RectTransform:
   m_RootOrder: 36
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -32}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -45}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355375261
 MonoBehaviour:
@@ -2905,8 +2905,8 @@ RectTransform:
   m_RootOrder: 19
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -232}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -249}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1360971280
 MonoBehaviour:
@@ -2940,7 +2940,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right knee around hips X axis
+  m_Text: Right knee around hips X
 --- !u!222 &1360971281
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3071,8 +3071,8 @@ RectTransform:
   m_RootOrder: 42
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -234}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -247}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1452848409
 MonoBehaviour:
@@ -3145,8 +3145,8 @@ RectTransform:
   m_RootOrder: 16
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -132}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -146}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1459410332
 MonoBehaviour:
@@ -3180,7 +3180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Left knee around hips Y axis
+  m_Text: Left knee around hips Y
 --- !u!222 &1459410333
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3219,8 +3219,8 @@ RectTransform:
   m_RootOrder: 15
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -99}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -112}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464632519
 MonoBehaviour:
@@ -3254,7 +3254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Hips and legs around belly
+  m_Text: Hips around Y axisy
 --- !u!222 &1464632520
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3317,7 +3317,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3367,8 +3367,8 @@ RectTransform:
   m_RootOrder: 34
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 33}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 23}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1525368269
 MonoBehaviour:
@@ -3441,8 +3441,8 @@ RectTransform:
   m_RootOrder: 20
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -268}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -286}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1596158763
 MonoBehaviour:
@@ -3476,7 +3476,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Left foot around knee Y axis
+  m_Text: Left foot around knee Y
 --- !u!222 &1596158764
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3515,8 +3515,8 @@ RectTransform:
   m_RootOrder: 32
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 88}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 83}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1612264062
 MonoBehaviour:
@@ -3589,8 +3589,8 @@ RectTransform:
   m_RootOrder: 23
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -375}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 480, y: -397}
+  m_SizeDelta: {x: 430, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1627135678
 MonoBehaviour:
@@ -3624,7 +3624,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right foot around knee X axis
+  m_Text: Right foot around knee X
 --- !u!222 &1627135679
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3814,8 +3814,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 476.5, y: 400}
-  m_SizeDelta: {x: 427, y: 40}
+  m_AnchoredPosition: {x: 474, y: 405}
+  m_SizeDelta: {x: 422, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648051119
 MonoBehaviour:
@@ -3888,8 +3888,8 @@ RectTransform:
   m_RootOrder: 39
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -135}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -147}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675773417
 MonoBehaviour:
@@ -4008,8 +4008,8 @@ RectTransform:
   m_RootOrder: 37
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -63}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -79}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700301235
 MonoBehaviour:
@@ -4082,8 +4082,8 @@ RectTransform:
   m_RootOrder: 26
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 322}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 320}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762184466
 MonoBehaviour:
@@ -4156,8 +4156,8 @@ RectTransform:
   m_RootOrder: 18
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -200}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -216}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782606362
 MonoBehaviour:
@@ -4191,7 +4191,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right knee around hips Y axis
+  m_Text: Left knee around hips X
 --- !u!222 &1782606363
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4230,8 +4230,8 @@ RectTransform:
   m_RootOrder: 29
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 203}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 193}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1852420095
 MonoBehaviour:
@@ -4304,8 +4304,8 @@ RectTransform:
   m_RootOrder: 43
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -272}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -286}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1858688550
 MonoBehaviour:
@@ -4378,8 +4378,8 @@ RectTransform:
   m_RootOrder: 31
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 117}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 112}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864569729
 MonoBehaviour:
@@ -4452,8 +4452,8 @@ RectTransform:
   m_RootOrder: 30
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 161}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 153}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877395023
 MonoBehaviour:
@@ -4526,8 +4526,8 @@ RectTransform:
   m_RootOrder: 38
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: -99}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: -116}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1891722371
 MonoBehaviour:
@@ -4662,8 +4662,8 @@ RectTransform:
   m_RootOrder: 11
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: 32}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: 22}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956078444
 MonoBehaviour:
@@ -4697,7 +4697,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Right Hand around Elbow X axis
+  m_Text: Right Hand around Elb X
 --- !u!222 &1956078445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4736,8 +4736,8 @@ RectTransform:
   m_RootOrder: 13
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: -30}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: -41}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999562370
 MonoBehaviour:
@@ -4771,7 +4771,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Hips around X axis
+  m_Text: Right Hand around Elb Y
 --- !u!222 &1999562371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4810,8 +4810,8 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 482, y: 159}
-  m_SizeDelta: {x: 433, y: 40}
+  m_AnchoredPosition: {x: 479, y: 152}
+  m_SizeDelta: {x: 428, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2018967113
 MonoBehaviour:
@@ -4845,7 +4845,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Left Hand around Elbow X axis
+  m_Text: Right Elb around shoulders X
 --- !u!222 &2018967114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4927,8 +4927,8 @@ RectTransform:
   m_RootOrder: 33
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.99994, y: 62}
-  m_SizeDelta: {x: 132, y: 39}
+  m_AnchoredPosition: {x: 795, y: 56}
+  m_SizeDelta: {x: 135, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078235176
 MonoBehaviour:
